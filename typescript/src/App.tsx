@@ -1,8 +1,42 @@
 import React from "react";
-
+import "../merge-sort";
+import GistFrame from "./GistFrame";
+import "./assets/css/index.css";
+import CodeRunner from "./CodeRunner";
+import bubbleSort from "../bubble-sort";
+import mergeSort from "../merge-sort";
+import quickSort from "../quick-sort";
 const App = () =>{
     return (
-        <p>try reactjs without cra</p>
+
+        <div className="container mx-auto pb-10">
+            <div className="flex flex-col">
+                <h1 className=" text-2xl text-center font-bold">Typescipt Algorithms</h1>
+                <p className="text-center my-5">
+                    a collection of Typescipt Algorithms test
+                </p>
+                <div className="flex justify-center items-center mt-2 gap-2 flex-row">
+                <a className="p-2 bg-blue-400 rounded text-white outline-none focus:outline-none hover:bg-green-300" href="https://github.com/rachmanzz/codetest" target="_blank">View on github</a>
+                    <a className="p-2 bg-blue-400 rounded text-white outline-none focus:outline-none hover:bg-green-300" href="https://github.com/rachmanzz/codetest/zipball/main" target="_blank">Download .zip</a>
+                    <a className="p-2 bg-blue-400 rounded text-white outline-none focus:outline-none hover:bg-green-300" href="https://github.com/rachmanzz/codetest/tarball/main" target="_blank">Download .tar.gz</a>
+                </div>
+            </div>
+            <h2 className="text-lg font-bold my-3">Quick Sort</h2>
+            <GistFrame id="994c23f9d1907eb214ced5628c90b5c4" />
+            <div>
+                <CodeRunner defValue="[1,4,8,4,5,7]" text={(input) => (<React.Fragment>quickSort({input})</React.Fragment>)} pattern={/(^$)|^\[$|^\[[\d,]+$|^\[[\d,\s]+\]$|^\[[\d,\s]+\]$/} run={(item: number[]) => quickSort(item)}/>
+            </div>
+            <h2 className="text-lg font-bold my-3">Bubble Sort</h2>
+            <GistFrame id="bcb2fe5098943ee5de976b5cdf0afb41" />
+            <div>
+                <CodeRunner defValue="[1,4,8,4,5,7], true" text={(input) => (<React.Fragment>bubbleSort({input})</React.Fragment>)} pattern={/(^$)|^\[$|^\[[\d,]+$|^\[[\d,\s]+\]$|^\[[\d,\s]+\](,|,\s{0,1}|,\s{0,1}(t|tr|tru|true|f|fa|fal|fals|false))$/} run={(item: number[], inverse?: boolean) => bubbleSort(item, inverse)}/>
+            </div>
+            <h2 className="text-lg font-bold my-3">Merge Sort</h2>
+            <GistFrame id="2caff9455aaf81f13ff5c186ddf6effa" />
+            <div>
+                <CodeRunner defValue="[1,4,8,4,5,7]" text={(input) => (<React.Fragment>mergeSort({input})</React.Fragment>)} pattern={/(^$)|^\[$|^\[[\d,]+$|^\[[\d,\s]+\]$|^\[[\d,\s]+\]$/} run={(item: number[]) => mergeSort(item)}/>
+            </div>
+        </div>
     )
 }
 
