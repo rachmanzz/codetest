@@ -4,7 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "webpack-dev-server .",
-    "build": "Webpack ."
+    "build": "webpack --config webpack.config.js"
   },
   "author": "Muhammad abddurahman",
   "license": "UNLICENSED",
