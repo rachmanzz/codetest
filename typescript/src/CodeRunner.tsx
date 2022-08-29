@@ -48,7 +48,7 @@ const CodeRunner = <S,>({text, run, defValue, pattern}: codeProps) => {
     return (
         <React.Fragment>
             <div className="relative flex flex-col border-l-4 border mx-2 border-gray-300">
-                <div className="font-mono flex flex-row font-light py-2 px-3">{text(inputText)}</div>
+                <div className="font-mono overflow-x-auto flex flex-row font-light py-2 px-3">{text(inputText)}</div>
                 <div className="flex flex-row justify-between bg-gray-100">
                     <div></div>
                     <button onClick={onClickRun} className="bg-green-400 inline-flex py-2 justify-center items-center text-white px-5">
