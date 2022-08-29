@@ -25,7 +25,7 @@ const CodeRunner = <S,>({text, run, defValue, pattern}: codeProps) => {
 
     const onClickRun = () => {
         //const result = run(valueResolve(value))
-        if (!/^[\w\d,.\s\[\]\{\}]+$/.test(value)) {
+        if (!/^[\w\d,.\s\[\]\{\}\`\`\'\'\"\"\-]+$/.test(value)) {
             alert("error, can't use illegal value")
             return
         }
